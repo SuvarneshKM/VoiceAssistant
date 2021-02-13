@@ -143,3 +143,12 @@ def get_date(text):
 		return None
 	return datetime.date(month=month, day=day, year=year)	
 
+
+def note(text):
+	date = datetime.datetime.now()
+	file_name = str(date).replace(":", "-") + "-note.txt"
+	with open(file_name, "w") as f:
+		f.write(text)
+
+	subprocess.Popen(["subl", file_name])	
+
