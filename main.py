@@ -152,3 +152,32 @@ def note(text):
 
 	subprocess.Popen(["subl", file_name])	
 
+WAKE = "jack"
+SERVICE = authenticate_google()
+print("start")
+
+while True:
+	print("listening")
+	text = get_audio()
+
+	if text.count(WAKE) > 0:
+		speak("I am ready")
+		text = get_audio()
+
+		CALENDAR_STRS = ["what do i have", "do i have plans", "am i busy"]
+		for phrase in CALENDAR_STRS:
+			if phrase in text:
+				date = get_date(text)
+				if date:
+					get_events(date, SERVICE)
+				else:
+					speak("I don't understand")	
+			
+		NOTE_STRS = ["make a note", "write this down", "remember this"]
+
+		for phrase in NOTE_STRS:
+			if phrase in text:
+				speak("what would you like me to write down?")
+				note_text = get_audio()
+				note(note_text)
+				speak("I've made a note of that.")
