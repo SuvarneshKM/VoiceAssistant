@@ -192,3 +192,25 @@ while True:
 				note_text = get_audio()
 				note(note_text)
 				speak("I've made a note of that.")
+		
+		
+		MUSIC_OPEN_STRS = ["play some music", "play music", "open spotify", "play songs"]	
+
+		for phrase in MUSIC_OPEN_STRS:
+			if phrase in text:
+				speak("Opening spotify..")
+				spotify_open()
+
+		MYWEBSITE_STRS = ["open my website"]	
+
+		for phrase in MYWEBSITE_STRS:
+			if phrase in text:
+				speak("Opening My website..")
+				mywebsite()
+
+		MYGITHUB_STRS = ["open my github"]	
+
+		for phrase in MYGITHUB_STRS:
+			if phrase in text:
+				speak("Opening My github account..")
+				mygithub()
