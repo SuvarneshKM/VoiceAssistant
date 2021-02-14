@@ -158,7 +158,10 @@ def spotify_open():
 def mywebsite():
 	import webbrowser
 	webbrowser.open('https://suvarneshkm.github.io/')
-	
+
+def mygithub():
+	import webbrowser
+	webbrowser.open('https://github.com/SuvarneshKM')	
 
 WAKE = "jack"
 SERVICE = authenticate_google()
