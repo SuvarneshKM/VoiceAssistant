@@ -152,6 +152,11 @@ def note(text):
 
 	subprocess.Popen(["subl", file_name])	
 
+def spotify_open():
+	subprocess.Popen(["spotify"])
+
+	
+
 WAKE = "jack"
 SERVICE = authenticate_google()
 print("start")
