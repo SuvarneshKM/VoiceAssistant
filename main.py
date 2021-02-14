@@ -155,6 +155,9 @@ def note(text):
 def spotify_open():
 	subprocess.Popen(["spotify"])
 
+def mywebsite():
+	import webbrowser
+	webbrowser.open('https://suvarneshkm.github.io/')
 	
 
 WAKE = "jack"
