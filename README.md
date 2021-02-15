@@ -1,5 +1,2 @@
 # VoiceAssistant
 VoiceAssistant
-
-## events
-## notes
